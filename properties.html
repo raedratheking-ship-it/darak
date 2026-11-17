@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#183B35">
+<title>العقارات | دارك DARAK</title>
+<meta name="description" content="تصفح جميع العقارات المتاحة للبيع والإيجار في المملكة العربية السعودية مع فلاتر بحث متقدمة.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="responsive.css">
+<link rel="stylesheet" href="animations.css">
+</head>
+<body data-page="properties">
+<a class="skip-link" href="#main">تخطي إلى المحتوى</a>
+<header id="site-header" class="site-header"></header>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="مسار التنقل">
+        <a href="index.html">الرئيسية</a><span>/</span><span aria-current="page">العقارات</span>
+      </nav>
+      <h1 class="page-title">العقارات المتاحة</h1>
+      <p class="page-sub">استعرض جميع العقارات المتاحة للبيع والإيجار، واستخدم الفلاتر للوصول إلى ما يناسبك.</p>
+    </div>
+  </section>
+
+  <section class="section properties-section">
+    <div class="container properties-layout">
+
+      <!-- FILTERS -->
+      <aside class="filters-panel" id="filters-panel" aria-label="فلاتر البحث">
+        <div class="filters-head">
+          <h2>تصفية النتائج</h2>
+          <button type="button" class="filters-close" id="filters-close" aria-label="إغلاق الفلاتر">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+          </button>
+        </div>
+
+        <form id="filters-form" class="filters-form">
+          <div class="filter-group">
+            <label class="filter-title" for="f-city">المدينة</label>
+            <select class="form-control" id="f-city"><option value="">كل المدن</option></select>
+          </div>
+
+          <div class="filter-group">
+            <label class="filter-title" for="f-type">نوع العقار</label>
+            <select class="form-control" id="f-type">
+              <option value="">كل الأنواع</option>
+              <option value="villa">فيلا</option>
+              <option value="apartment">شقة</option>
+              <option value="townhouse">تاون هاوس</option>
+              <option value="land">أرض</option>
+              <option value="commercial">عقار تجاري</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label class="filter-title" for="f-purpose">الغرض</label>
+            <select class="form-control" id="f-purpose">
+              <option value="">البيع والإيجار</option>
+              <option value="sale">للبيع</option>
+              <option value="rent">للإيجار</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <span class="filter-title">نطاق السعر (ريال)</span>
+            <div class="filter-row">
+              <input class="form-control" id="f-min" type="number" min="0" step="50000" placeholder="من">
+              <input class="form-control" id="f-max" type="number" min="0" step="50000" placeholder="إلى">
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <span class="filter-title">الغرف والحمامات</span>
+            <div class="filter-row">
+              <select class="form-control" id="f-beds">
+                <option value="">غرف النوم</option>
+                <option value="1">1+</option><option value="2">2+</option>
+                <option value="3">3+</option><option value="4">4+</option><option value="5">5+</option>
+              </select>
+              <select class="form-control" id="f-baths">
+                <option value="">الحمامات</option>
+                <option value="1">1+</option><option value="2">2+</option>
+                <option value="3">3+</option><option value="4">4+</option><option value="5">5+</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <label class="filter-title" for="f-area">أقل مساحة (م²)</label>
+            <input class="form-control" id="f-area" type="number" min="0" step="10" placeholder="مثال: 150">
+          </div>
+
+          <div class="filter-group">
+            <label class="switch">
+              <input type="checkbox" id="f-fav">
+              <span class="switch-track"></span>
+              <span class="switch-label">المفضلة فقط</span>
+            </label>
+          </div>
+
+          <div class="filter-actions">
+            <button type="button" class="btn btn-outline btn-block" id="filters-reset">مسح جميع الفلاتر</button>
+          </div>
+        </form>
+      </aside>
+
+      <!-- RESULTS -->
+      <div class="properties-results">
+        <div class="results-bar">
+          <p class="results-count" id="results-count">—</p>
+          <div class="results-tools">
+            <button type="button" class="btn btn-outline filter-toggle" id="filters-open">
+              <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 6h16M7 12h10M10 18h4"/></svg>
+              الفلاتر
+            </button>
+            <label class="visually-hidden" for="f-sort">ترتيب النتائج</label>
+            <select class="form-control sort-select" id="f-sort">
+              <option value="newest">الأحدث أولاً</option>
+              <option value="price-asc">السعر: من الأقل للأعلى</option>
+              <option value="price-desc">السعر: من الأعلى للأقل</option>
+              <option value="area-desc">المساحة: الأكبر أولاً</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="property-grid" id="properties-grid" aria-live="polite"></div>
+        <div id="empty-state"></div>
+        <nav class="pagination" id="pagination" aria-label="ترقيم الصفحات"></nav>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer id="site-footer" class="site-footer"></footer>
+
+<script src="main.js" defer></script>
+<script src="data.js" defer></script>
+<script src="favorites.js" defer></script>
+<script src="navigation.js" defer></script>
+<script src="filters.js" defer></script>
+</body>
+</html>

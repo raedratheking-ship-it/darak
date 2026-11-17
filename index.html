@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#183B35">
+<title>دارك DARAK — عقارات فاخرة للبيع والإيجار في المملكة</title>
+<meta name="description" content="اكتشف مجموعة مختارة من العقارات للبيع والإيجار في أفضل المواقع بالمملكة العربية السعودية. فلل، شقق، تاون هاوس، أراضٍ وعقارات تجارية.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="responsive.css">
+<link rel="stylesheet" href="animations.css">
+</head>
+<body data-page="home">
+<a class="skip-link" href="#main">تخطي إلى المحتوى</a>
+<header id="site-header" class="site-header"></header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-media">
+      <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2000&q=80"
+           alt="فيلا معمارية فاخرة في جدة" width="2000" height="1300" fetchpriority="high">
+      <span class="hero-scrim"></span>
+    </div>
+    <div class="container hero-content">
+      <p class="eyebrow eyebrow-light">DARAK — جدة، المملكة العربية السعودية</p>
+      <h1 class="hero-title">اعثر على منزلك الذي<br><span>يشبه أحلامك</span></h1>
+      <p class="hero-desc">اكتشف مجموعة مختارة من العقارات للبيع والإيجار في أفضل المواقع بالمملكة العربية السعودية.</p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="properties.html">استكشف العقارات</a>
+        <a class="btn btn-light" href="sell-property.html">اعرض عقارك</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SMART SEARCH -->
+  <div class="container search-holder">
+    <form class="smart-search" id="smart-search" role="search" aria-label="البحث عن عقار">
+      <div class="search-field">
+        <label for="s-city">المدينة</label>
+        <select id="s-city" name="city"><option value="">كل المدن</option></select>
+      </div>
+      <div class="search-field">
+        <label for="s-type">نوع العقار</label>
+        <select id="s-type" name="type">
+          <option value="">كل الأنواع</option>
+          <option value="villa">فيلا</option>
+          <option value="apartment">شقة</option>
+          <option value="townhouse">تاون هاوس</option>
+          <option value="land">أرض</option>
+          <option value="commercial">عقار تجاري</option>
+        </select>
+      </div>
+      <div class="search-field">
+        <label for="s-purpose">الغرض</label>
+        <select id="s-purpose" name="purpose">
+          <option value="">البيع والإيجار</option>
+          <option value="sale">للبيع</option>
+          <option value="rent">للإيجار</option>
+        </select>
+      </div>
+      <div class="search-field">
+        <label for="s-min">أقل سعر</label>
+        <input id="s-min" name="minPrice" type="number" min="0" step="50000" placeholder="0">
+      </div>
+      <div class="search-field">
+        <label for="s-max">أعلى سعر</label>
+        <input id="s-max" name="maxPrice" type="number" min="0" step="50000" placeholder="بلا حد">
+      </div>
+      <button class="search-submit" type="submit">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        بحث
+      </button>
+    </form>
+  </div>
+
+  <!-- FEATURED -->
+  <section class="section" id="featured">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">عقارات مختارة</p>
+          <h2 class="section-title">عقارات مختارة بعناية</h2>
+          <p class="section-sub">مجموعة من أفضل العقارات المتاحة الآن في أبرز أحياء المملكة، انتقيناها لتلائم مختلف الاحتياجات.</p>
+        </div>
+        <a class="link-arrow" href="properties.html">عرض جميع العقارات
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+        </a>
+      </div>
+      <div class="property-grid" id="featured-grid"></div>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section class="section section-tint">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">تصفح حسب النوع</p>
+          <h2 class="section-title">ابحث عن النوع الذي يناسبك</h2>
+        </div>
+        <a class="link-arrow" href="properties.html">كل العقارات
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+        </a>
+      </div>
+      <div class="category-grid reveal">
+        <a class="category-card" href="properties.html?type=villa">
+          <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1000&q=80" alt="فلل فاخرة" loading="lazy">
+          <span class="category-overlay"></span>
+          <span class="category-info"><span class="category-name">فلل</span><span class="category-count" data-cat-count="villa">—</span></span>
+        </a>
+        <a class="category-card" href="properties.html?type=apartment">
+          <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80" alt="شقق سكنية" loading="lazy">
+          <span class="category-overlay"></span>
+          <span class="category-info"><span class="category-name">شقق</span><span class="category-count" data-cat-count="apartment">—</span></span>
+        </a>
+        <a class="category-card" href="properties.html?type=townhouse">
+          <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=80" alt="تاون هاوس" loading="lazy">
+          <span class="category-overlay"></span>
+          <span class="category-info"><span class="category-name">تاون هاوس</span><span class="category-count" data-cat-count="townhouse">—</span></span>
+        </a>
+        <a class="category-card" href="properties.html?type=land">
+          <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80" alt="أراضٍ" loading="lazy">
+          <span class="category-overlay"></span>
+          <span class="category-info"><span class="category-name">أراضٍ</span><span class="category-count" data-cat-count="land">—</span></span>
+        </a>
+        <a class="category-card" href="properties.html?type=commercial">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" alt="عقارات تجارية" loading="lazy">
+          <span class="category-overlay"></span>
+          <span class="category-info"><span class="category-name">عقارات تجارية</span><span class="category-count" data-cat-count="commercial">—</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY DARAK -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">لماذا دارك</p>
+          <h2 class="section-title">لماذا تختار دارك؟</h2>
+        </div>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card reveal">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 9.2l5.9-.9L12 3Z"/></svg></div>
+          <h3>عقارات مختارة بعناية</h3>
+          <p>كل عقار يتم مراجعته والتحقق من بياناته قبل نشره على المنصة.</p>
+        </article>
+        <article class="feature-card reveal" style="--d:1">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></div>
+          <h3>بحث ذكي وسريع</h3>
+          <p>فلاتر دقيقة تساعدك على الوصول إلى العقار المناسب في ثوانٍ.</p>
+        </article>
+        <article class="feature-card reveal" style="--d:2">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6.5v5c0 5 3.4 8.6 8 9.5 4.6-.9 8-4.5 8-9.5v-5L12 3Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+          <h3>معلومات واضحة وموثوقة</h3>
+          <p>تفاصيل كاملة عن المساحة والمواصفات والسعر دون مفاجآت.</p>
+        </article>
+        <article class="feature-card reveal" style="--d:3">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M8 10h8M8 14h5"/></svg></div>
+          <h3>تجربة عقارية سهلة</h3>
+          <p>واجهة بسيطة وأنيقة تعمل بسلاسة على الجوال والكمبيوتر.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section section-tint">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">كيف تعمل دارك</p>
+          <h2 class="section-title">خطوات بسيطة نحو منزلك الجديد</h2>
+        </div>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><span class="step-num">01</span><h3>حدد احتياجاتك</h3><p>اختر المدينة ونوع العقار والميزانية المناسبة لك.</p></div>
+        <div class="step reveal" style="--d:1"><span class="step-num">02</span><h3>استكشف العقارات</h3><p>تصفح النتائج وقارن بين الخيارات المتاحة بسهولة.</p></div>
+        <div class="step reveal" style="--d:2"><span class="step-num">03</span><h3>تواصل مع المعلن</h3><p>اطلب معاينة أو تواصل مباشرة عبر الهاتف أو واتساب.</p></div>
+        <div class="step reveal" style="--d:3"><span class="step-num">04</span><h3>ابدأ رحلتك</h3><p>أكمل إجراءاتك وانتقل إلى منزلك الجديد بثقة.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SELL CTA -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-sell reveal">
+        <div class="cta-body">
+          <p class="eyebrow eyebrow-light">للملاك</p>
+          <h2>لديك عقار ترغب في بيعه أو تأجيره؟</h2>
+          <p>اعرض عقارك أمام الباحثين عن فرص عقارية مميزة، واجعل الوصول إلى المشتري أو المستأجر أسهل.</p>
+          <a class="btn btn-gold" href="sell-property.html">اعرض عقارك الآن</a>
+        </div>
+        <div class="cta-media">
+          <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=80" alt="داخل فيلا فاخرة" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="section section-tint">
+    <div class="container">
+      <div class="newsletter reveal">
+        <p class="eyebrow" style="justify-content:center">النشرة البريدية</p>
+        <h2 class="section-title">كن أول من يعرف عن العقارات الجديدة</h2>
+        <p class="section-sub" style="margin-inline:auto">اشترك في نشرة دارك لتصلك أحدث العقارات المضافة والفرص العقارية المميزة.</p>
+        <form class="newsletter-form" id="newsletter-form" novalidate>
+          <label class="visually-hidden" for="news-email">البريد الإلكتروني</label>
+          <input id="news-email" type="email" placeholder="أدخل بريدك الإلكتروني" required>
+          <button class="btn btn-primary" type="submit">اشترك</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="site-footer" class="site-footer"></footer>
+
+<script src="main.js" defer></script>
+<script src="data.js" defer></script>
+<script src="favorites.js" defer></script>
+<script src="navigation.js" defer></script>
+<script src="search.js" defer></script>
+</body>
+</html>

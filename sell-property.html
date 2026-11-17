@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#183B35">
+<title>اعرض عقارك | دارك DARAK</title>
+<meta name="description" content="اعرض عقارك للبيع أو الإيجار على منصة دارك العقارية واوصل إلى المشتري أو المستأجر المناسب.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="responsive.css">
+<link rel="stylesheet" href="animations.css">
+</head>
+<body data-page="sell">
+<a class="skip-link" href="#main">تخطي إلى المحتوى</a>
+<header id="site-header" class="site-header"></header>
+
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="مسار التنقل">
+        <a href="index.html">الرئيسية</a><span>/</span><span aria-current="page">اعرض عقارك</span>
+      </nav>
+      <h1 class="page-title">اعرض عقارك على دارك</h1>
+      <p class="page-sub">أكمل البيانات التالية وسنعرض عقارك أمام الباحثين عن فرص عقارية مميزة.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container sell-layout">
+      <div class="sell-form-wrap">
+        <form id="sell-form" novalidate>
+
+          <fieldset class="form-section">
+            <legend>بيانات المالك</legend>
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label" for="o-name">اسم المالك *</label>
+                <input class="form-control" id="o-name" name="ownerName" type="text" autocomplete="name" placeholder="الاسم الكامل">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="o-phone">رقم الجوال *</label>
+                <input class="form-control" id="o-phone" name="phone" type="tel" inputmode="tel" placeholder="05XXXXXXXX">
+              </div>
+              <div class="form-group form-group-full">
+                <label class="form-label" for="o-email">البريد الإلكتروني *</label>
+                <input class="form-control" id="o-email" name="email" type="email" autocomplete="email" placeholder="name@example.com">
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend>بيانات العقار</legend>
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label" for="o-city">المدينة *</label>
+                <select class="form-control" id="o-city" name="city">
+                  <option value="">اختر المدينة</option>
+                  <option>جدة</option><option>الرياض</option><option>مكة المكرمة</option>
+                  <option>المدينة المنورة</option><option>الدمام</option><option>الخبر</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="o-district">الحي *</label>
+                <input class="form-control" id="o-district" name="district" type="text" placeholder="مثال: أبحر الشمالية">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="o-type">نوع العقار *</label>
+                <select class="form-control" id="o-type" name="type">
+                  <option value="">اختر النوع</option>
+                  <option value="villa">فيلا</option><option value="apartment">شقة</option>
+                  <option value="townhouse">تاون هاوس</option><option value="land">أرض</option>
+                  <option value="commercial">عقار تجاري</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="o-purpose">الغرض *</label>
+                <select class="form-control" id="o-purpose" name="purpose">
+                  <option value="">اختر الغرض</option>
+                  <option value="sale">بيع</option><option value="rent">إيجار</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="o-price">السعر (ريال) *</label>
+                <input class="form-control" id="o-price" name="price" type="number" min="0" step="1000" placeholder="مثال: 2450000">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="o-area">المساحة (م²) *</label>
+                <input class="form-control" id="o-area" name="area" type="number" min="0" step="1" placeholder="مثال: 320">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="o-beds">عدد الغرف</label>
+                <input class="form-control" id="o-beds" name="beds" type="number" min="0" step="1" placeholder="0">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="o-baths">عدد الحمامات</label>
+                <input class="form-control" id="o-baths" name="baths" type="number" min="0" step="1" placeholder="0">
+              </div>
+              <div class="form-group form-group-full">
+                <label class="form-label" for="o-desc">وصف العقار *</label>
+                <textarea class="form-control" id="o-desc" name="description" rows="5" placeholder="اكتب وصفاً تفصيلياً للعقار ومميزاته..."></textarea>
+                <span class="field-hint">20 حرفاً على الأقل</span>
+              </div>
+              <div class="form-group form-group-full">
+                <label class="form-label" for="o-images">صور العقار (اختياري)</label>
+                <input class="form-control file-input" id="o-images" name="images" type="file" accept="image/*" multiple>
+                <span class="field-hint" id="images-hint">يمكنك اختيار عدة صور. لن يتم رفعها إلى خادم في هذه النسخة.</span>
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="form-submit">
+            <button class="btn btn-primary" type="submit">إرسال طلب العرض</button>
+            <p class="form-note">يتم حفظ الطلب محلياً في متصفحك فقط (LocalStorage) ولا يُرسل إلى خادم.</p>
+          </div>
+        </form>
+
+        <div class="form-success" id="sell-success" hidden>
+          <div class="success-icon">
+            <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>
+          </div>
+          <h2>تم إرسال طلبك بنجاح</h2>
+          <p>شكراً لك، تم حفظ بيانات عقارك محلياً. سيتواصل معك فريق دارك قريباً.</p>
+          <div class="success-actions">
+            <a class="btn btn-primary" href="properties.html">تصفح العقارات</a>
+            <button class="btn btn-outline" type="button" id="sell-again">إضافة عقار آخر</button>
+          </div>
+        </div>
+      </div>
+
+      <aside class="sell-side">
+        <div class="sell-side-card">
+          <h2>لماذا تعرض عقارك على دارك؟</h2>
+          <ul class="check-list">
+            <li>وصول إلى شريحة واسعة من الباحثين والمستثمرين.</li>
+            <li>عرض احترافي بصور ومواصفات واضحة.</li>
+            <li>لا رسوم على نشر العقار في هذه النسخة.</li>
+            <li>تجربة سهلة من الجوال أو الكمبيوتر.</li>
+          </ul>
+        </div>
+        <div class="sell-side-card sell-side-dark">
+          <h2>تحتاج مساعدة؟</h2>
+          <p>فريق دارك جاهز لمساعدتك في تجهيز بيانات عقارك.</p>
+          <a class="btn btn-gold btn-block" href="contact.html">تواصل معنا</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<footer id="site-footer" class="site-footer"></footer>
+
+<script src="main.js" defer></script>
+<script src="data.js" defer></script>
+<script src="favorites.js" defer></script>
+<script src="navigation.js" defer></script>
+<script src="sell-property.js" defer></script>
+</body>
+</html>
